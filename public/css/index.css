@@ -1,0 +1,43 @@
+header{
+	height: 100px;
+	width: 100%;
+	background-color: green;	
+}
+.login-name{
+	font-size: 2em;
+	margin-left: 10px;
+}
+.login-href{
+	font-size: 1.5em;
+	margin-left: 10px;
+}
+.content{
+	display:grid;
+	grid-template-rows: 80%, 1fr ,1fr;
+	grid-gap: 5px;
+}
+table{
+	grid-row: 1;
+	border: 1px solid black;
+	margin: 10px;
+	border-top: 1px solid black;
+	text-align: center;
+}
+td{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+
+.add-href{
+	grid-row: 2;
+	text-align: center;
+	font-size: 1.5em;
+	margin: 5px;
+}
+.pagination{
+	grid-row: 3;
+	margin: 10px;
+	justify-self: center;
+	font-size: 1.5em
+}
