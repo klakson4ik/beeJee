@@ -15,5 +15,4 @@ define('CSS', WWW . '/css');
 
 $uri = rtrim($_SERVER['REQUEST_URI'], '/');
 
-define('PATH', $app_path);
 

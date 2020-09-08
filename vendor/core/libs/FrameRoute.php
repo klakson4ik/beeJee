@@ -9,7 +9,6 @@ class FrameRoute
 {
       public static function start($uri)
       {
-         require_once LIBS . '/Functions.php';
 
          spl_autoload_register(function($class) {
             $file =  ROOT . '/' . str_replace('\\', '/', $class) . '.php';
