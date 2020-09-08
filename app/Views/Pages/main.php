@@ -7,8 +7,9 @@
 	?>
 <?php endif;?> 
 <table>
+	<thead>
 	<tr>
-		<form action="/main/sort" method="post">
+	<form action="/main/sort/?page=<?=$data['page'];?>" method="post">
 		<th>Имя задачи
 				<p><button name="sort" value="name_ASC"><</button>
 					<button name="sort" value="name_DESC">></button></p>
@@ -25,8 +26,13 @@
 				<p><button name="sort" value="status_ASC"><</button>
 				<button name="sort" value="status_DESC">></button></p>
 		</th>
+		<?php if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true):?>
+			<th>Действие</th>
+		<?php endif;?> 
 		</form>
 	</tr>
+	</thead>
+	<tbody>
 	<?php foreach ($data['tasks'] as $task) :?>
 	<tr>
 		<td><?=$task['name'];?></td>
@@ -54,7 +60,8 @@
 			 </td>
 		<?php endif;?>		  
 	</tr>
-   <?php endforeach;?>
+	<?php endforeach;?>
+	</tbody>
 </table>
 
 	<a  class="add-href" href="/main/add">Добавить задачу</a>
@@ -62,6 +69,13 @@
 	<?php if($data['page'] > 1):?>
 		<a href="/?page=<?=$data['page'] - 1 ;?>"><</a>
 	<?php endif;?>
+
+	<?php if(isset($data['page'])):?>
+		<span><?=$data['page'];?> стр</span>
+	<?php else:?>
+		<span>1 стр</span>
+	<?php endif;?>
+
 	<?php if($data['page'] < $data['count']) :?>
 		<a href ="/?page=<?=$data['page'] + 1;?>">></a>
 	<?php endif;?>

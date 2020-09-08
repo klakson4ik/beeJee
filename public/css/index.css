@@ -16,17 +16,12 @@ header{
 	grid-template-rows: 80%, 1fr ,1fr;
 	grid-gap: 5px;
 }
-table{
-	grid-row: 1;
-	border: 1px solid black;
-	margin: 10px;
-	border-top: 1px solid black;
-	text-align: center;
-}
-td{
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-}
+
+table {width: 100%; border-collapse: collapse;}
+table td {padding: 12px 16px; height: 100px; width: 200px; text-align: center; font-size: 1.2em;}
+table thead tr {font-weight: bold; border-top: 1px solid #e8e9eb; height: 100px; width: 200px; text-align: center; font-size: 1.2em;}
+table tr {border-bottom: 1px solid #e8e9eb;}
+table tbody tr:hover {background: #e8f6ff;}
 
 
 .add-href{
