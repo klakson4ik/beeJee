@@ -8,7 +8,7 @@ class MainController
 {
 	 public static function index()
 	 {
-			$perPage = 2;
+			$perPage = 3;
 			$classTasks = new Tasks();
 			$data['tasks'] = isset($_SESSION['sort']) ? $classTasks->getSortTasks() : $classTasks->getTasks();
 			$count = (int)ceil(count($data['tasks']) / $perPage);
